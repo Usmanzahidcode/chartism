@@ -20,7 +20,7 @@ const plugin = {
 };
 
 let chartData = {
-    labels: ['Usman', 'Aman'],
+    labels: ['Student 1', 'Student 2'],
     datasets: [{
         label: 'Marks',
         data: [12, 19],
