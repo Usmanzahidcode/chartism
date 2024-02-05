@@ -1,0 +1,68 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+  body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      font-family: poppins, Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .app-wrapper {
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+  }
+
+  .data-input {
+      padding: 5px 10px;
+      border: none;
+      border-bottom: 2px solid #212529;
+      background-color: #e7f5ff;
+  }
+
+  label {
+      font-size: 14px;
+  }
+
+  .data-collector {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .btn {
+      padding: 7px 20px;
+      font-weight: bold;
+      color: #1864ab;
+      background-color: #e7f5ff;
+      border: none;
+      border-radius: 1000px;
+  }
+
+  .action-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  .divider {
+      margin: 45px 0 10px 0;
+      width: 50%;
+      border-bottom: 1px solid black;
+  }
+
+  .app-info {
+      width: 70%;
+  }
+
+  .bottom-text {
+      text-align: center;
+  }
+
+  .bottom-feature-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
