@@ -1,68 +1,109 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/* Bootstrap customization code : TO be added later on */
 
-  body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-      font-family: poppins, Georgia, 'Times New Roman', Times, serif;
-  }
+/* :root {
+  --primary-color: #ff5733;
+  --secondary-color: #2ecc71;
+} */
 
-  .app-wrapper {
-      width: 50vw;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-  }
+/* Global variables */
 
-  .data-input {
-      padding: 5px 10px;
-      border: none;
-      border-bottom: 2px solid #212529;
-      background-color: #e7f5ff;
-  }
+:root {
+  /* Primary color */
+  --primary-color: #339af0;
+  --primary-color-bg: #1864ab;
+  --primary-color-text: #e7f5ff;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: space-between !important;
+  font-family: poppins, Georgia, "Times New Roman", Times, serif;
+}
 
-  label {
-      font-size: 14px;
-  }
+.btn {
+  border-radius: 1000px;
+}
 
-  .data-collector {
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      gap: 10px;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 1.5;
+  margin: 0;
+}
 
-  .btn {
-      padding: 7px 20px;
-      font-weight: bold;
-      color: #1864ab;
-      background-color: #e7f5ff;
-      border: none;
-      border-radius: 1000px;
-  }
+a {
+  text-decoration: none;
+  margin: 0;
+  line-height: 1.2;
+}
+a:hover {
+}
+header a,
+footer a {
+  color: var(--primary-color-text);
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+header {
+  padding: 20px 0;
 
-  .action-wrapper {
-      display: flex;
-      justify-content: space-evenly;
-  }
+  background-color: var(--primary-color);
+  text-align: center;
+  width: 100%;
 
-  .divider {
-      margin: 45px 0 10px 0;
-      width: 50%;
-      border-bottom: 1px solid black;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.nav-bar {
+  display: flex;
+  align-items: end;
+  gap: 40px;
+}
+.nav-logo {
+  width: 70px;
+}
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
 
-  .app-info {
-      width: 70%;
-  }
+  gap: 7px;
+}
+footer {
+  padding: 20px 0;
 
-  .bottom-text {
-      text-align: center;
-  }
+  background-color: var(--primary-color);
+  text-align: center;
+  width: 100%;
 
-  .bottom-feature-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--primary-color-text);
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.graphmaker-bigbutton {
+  padding: 20px;
+  border-radius: 0.375rem;
+  background-color: #e9ecef;
+  border: 1px solid black;
+  border: none;
+}
