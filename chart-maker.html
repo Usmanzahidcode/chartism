@@ -32,11 +32,17 @@
         </div>
       </div>
     </header>
-    <div class="container p-5">
+    <div class="container p-5 d-flex flex-column gap-3">
+      <div>
+        <h3>Enter the data</h3>
+        <p class="lead">
+          Just put the given data in the table and create the chart
+        </p>
+      </div>
       <div class="table-container border border-2">
         <table class="table" id="data-table">
           <tr class="table-warning">
-            <th>Student</th>
+            <th>Entities ↓ | Datasets →</th>
             <th><input type="text" placeholder="Subject 1" /></th>
           </tr>
           <tr>
@@ -53,18 +59,24 @@
           </tr>
         </table>
       </div>
-
-      <button class="btn btn-primary" id="row-add-button" onclick="addRow()">
-        Add Row
-      </button>
-      <button class="btn btn-primary" onclick="addColumn()">Add Column</button>
-      <button class="btn btn-primary" onclick="generateChart()">
-        Make chart
-      </button>
-      <select name="select-fill" id="fill-selecter">
-        <option value="fill">Fill</option>
-        <option value="fill">No Fill</option>
-      </select>
+      <div class="d-flex justify-content-center gap-4">
+        <button class="btn btn-primary" id="row-add-button" onclick="addRow()">
+          Add Row
+        </button>
+        <button class="btn btn-primary" onclick="addColumn()">
+          Add Column
+        </button>
+        <button class="btn btn-success" onclick="generateChart()">
+          Make chart
+        </button>
+        <select
+          name="select-fill"
+          class="form-select w-auto"
+          id="fill-selecter">
+          <option value="true" selected>Fill</option>
+          <option value="false">No Fill</option>
+        </select>
+      </div>
       <div class="chart-container">
         <canvas id="chart-wrapper"></canvas>
       </div>

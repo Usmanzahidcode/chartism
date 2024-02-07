@@ -77,7 +77,9 @@ function generateChart() {
     let studentName = rows[i].cells[0].querySelector("input").value;
     labels.push(studentName);
   }
-
+  let fillvalue =
+    document.getElementById("fill-selecter").value === "true" ? true : false;
+  console.log(fillvalue.type);
   // Extract marks data for each subject
   for (let j = 1; j < rows[0].cells.length; j++) {
     let subjectName = rows[0].cells[j].querySelector("input").value;
@@ -92,7 +94,7 @@ function generateChart() {
       label: subjectName,
       data: data,
       borderWidth: 1,
-      fill: true,
+      fill: fillvalue,
       tension: 0.3,
     });
   }
