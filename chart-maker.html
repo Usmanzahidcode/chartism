@@ -69,12 +69,22 @@
         <button class="btn btn-success" onclick="generateChart()">
           Make chart
         </button>
+        <button class="btn btn-danger" onclick="downloadChart()">
+          Download chart
+        </button>
         <select
           name="select-fill"
           class="form-select w-auto"
           id="fill-selecter">
           <option value="true" selected>Fill</option>
           <option value="false">No Fill</option>
+        </select>
+        <select
+          name="select-type"
+          class="form-select w-auto"
+          id="type-selecter">
+          <option value="line" selected>Line</option>
+          <option value="bar">Bar</option>
         </select>
       </div>
       <div class="chart-container">
@@ -85,7 +95,9 @@
     <footer>
       <div class="footer-info">
         <p>Open source project by Usman Zahid.</p>
-        <a href="https://google.com" target="_blank">Consider Conributing</a>
+        <a href="https://github.com/Usmanzahidcode/chartism" target="_blank"
+          >Consider Conributing</a
+        >
       </div>
     </footer>
 

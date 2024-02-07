@@ -79,7 +79,8 @@ function generateChart() {
   }
   let fillvalue =
     document.getElementById("fill-selecter").value === "true" ? true : false;
-  console.log(fillvalue.type);
+  let chartType = document.getElementById("type-selecter").value;
+  console.log(chartType);
   // Extract marks data for each subject
   for (let j = 1; j < rows[0].cells.length; j++) {
     let subjectName = rows[0].cells[j].querySelector("input").value;
@@ -102,7 +103,7 @@ function generateChart() {
   // Generate the chart
   const ctx = document.getElementById("chart-wrapper");
   myChart = new Chart(ctx, {
-    type: "line",
+    type: chartType,
     data: {
       labels: labels,
       datasets: datasets,
@@ -130,4 +131,17 @@ function generateChart() {
   });
 
   console.log("myChart", myChart);
+}
+
+// Download the Image
+
+function downloadChart() {
+  const canvas = document.getElementById("chart-wrapper");
+  const dataURL = canvas.toDataURL("image/png");
+  const link = document.createElement("a");
+  link.href = dataURL;
+  link.download = "chart.png";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
