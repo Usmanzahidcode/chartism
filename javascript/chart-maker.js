@@ -1,4 +1,3 @@
-// Add the rows function
 function addRow() {
   let table = document.getElementById("data-table");
   let rowCount = table.rows.length;
@@ -10,7 +9,7 @@ function addRow() {
     if (i === 0) {
       let input = document.createElement("input");
       input.type = "text";
-      input.value = "Student " + rowCount;
+      input.value = "label " + rowCount;
       cell.appendChild(input);
     } else {
       let input = document.createElement("input");
@@ -23,21 +22,17 @@ function addRow() {
   }
 }
 
-// Add a column to the table
 function addColumn() {
   let table = document.getElementById("data-table");
 
-  // Loop through each row and add a cell at the end of each row
   for (let i = 0; i < table.rows.length; i++) {
     let cell = table.rows[i].insertCell(-1);
     if (i === 0) {
-      // If it's the first row, create a header cell with an input element
       let input = document.createElement("input");
       input.type = "text";
       input.value = "Subject " + (table.rows[0].cells.length - 1);
       cell.appendChild(input);
     } else {
-      // For other rows, create a regular cell with an input element
       let input = document.createElement("input");
       input.type = "number";
       input.min = "0";
@@ -48,7 +43,7 @@ function addColumn() {
   }
 }
 
-// Making the chart:
+// Generate the chart:
 
 const plugin = {
   id: "customCanvasBackgroundColor",
@@ -64,7 +59,7 @@ const plugin = {
 let myChart = null;
 function generateChart() {
   if (myChart) {
-    myChart.destroy(); // Destroy the existing chart instance if it exists
+    myChart.destroy();
   }
   let table = document.getElementById("data-table");
   let rows = table.rows;
@@ -72,10 +67,9 @@ function generateChart() {
   let labels = [];
   let datasets = [];
 
-  // Extract student names
   for (let i = 1; i < rows.length; i++) {
-    let studentName = rows[i].cells[0].querySelector("input").value;
-    labels.push(studentName);
+    let label = rows[i].cells[0].querySelector("input").value;
+    labels.push(label);
   }
   let fillvalue =
     document.getElementById("fill-selecter").value === "true" ? true : false;
@@ -83,7 +77,7 @@ function generateChart() {
   console.log(chartType);
   // Extract marks data for each subject
   for (let j = 1; j < rows[0].cells.length; j++) {
-    let subjectName = rows[0].cells[j].querySelector("input").value;
+    let dataset_names = rows[0].cells[j].querySelector("input").value;
     let data = [];
 
     for (let i = 1; i < rows.length; i++) {
@@ -92,7 +86,7 @@ function generateChart() {
     }
 
     datasets.push({
-      label: subjectName,
+      label: dataset_names,
       data: data,
       borderWidth: 1,
       fill: fillvalue,
@@ -145,6 +139,8 @@ function downloadChart() {
   link.click();
   document.body.removeChild(link);
 }
+
+// Initial chart creation with dummy data
 
 window.onload = function () {
   document.getElementById("generate-button").click();
