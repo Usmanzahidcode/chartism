@@ -30,7 +30,7 @@ function addColumn() {
     if (i === 0) {
       let input = document.createElement("input");
       input.type = "text";
-      input.value = "Subject " + (table.rows[0].cells.length - 1);
+      input.value = "Dataset " + (table.rows[0].cells.length - 1);
       cell.appendChild(input);
     } else {
       let input = document.createElement("input");
