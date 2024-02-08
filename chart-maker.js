@@ -145,3 +145,7 @@ function downloadChart() {
   link.click();
   document.body.removeChild(link);
 }
+
+window.onload = function () {
+  document.getElementById("generate-button").click();
+};

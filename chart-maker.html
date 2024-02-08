@@ -72,20 +72,23 @@
       <div class="table-container border border-2">
         <table class="table" id="data-table">
           <tr class="table-warning">
-            <th>Entities ↓ | Datasets →</th>
-            <th><input type="text" placeholder="Subject 1" /></th>
+            <th>
+              Datasets (different parameters) → <br />
+              Entities (Labels) ↓
+            </th>
+            <th><input type="text" value="Profits in Millions" /></th>
           </tr>
           <tr>
-            <td><input type="text" value="Student 1" /></td>
-            <td><input type="number" min="0" max="100" value="0" /></td>
+            <td><input type="text" value="2020" /></td>
+            <td><input type="number" min="0" max="100" value="5.423" /></td>
           </tr>
           <tr>
-            <td><input type="text" value="Student 2" /></td>
-            <td><input type="number" min="0" max="100" value="0" /></td>
+            <td><input type="text" value="2021" /></td>
+            <td><input type="number" min="0" max="100" value="14.5" /></td>
           </tr>
           <tr>
-            <td><input type="text" value="Student 3" /></td>
-            <td><input type="number" min="0" max="100" value="0" /></td>
+            <td><input type="text" value="2022" /></td>
+            <td><input type="number" min="0" max="100" value="6.97" /></td>
           </tr>
         </table>
       </div>
@@ -96,7 +99,10 @@
         <button class="btn btn-primary" onclick="addColumn()">
           Add Column
         </button>
-        <button class="btn btn-success" onclick="generateChart()">
+        <button
+          class="btn btn-success"
+          onclick="generateChart()"
+          id="generate-button">
           Make chart
         </button>
         <button class="btn btn-danger" onclick="downloadChart()">
