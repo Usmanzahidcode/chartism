@@ -8,11 +8,13 @@ function addRow() {
     let cell = newRow.insertCell(i);
     if (i === 0) {
       let input = document.createElement("input");
+      input.addEventListener("input", generateChart);
       input.type = "text";
       input.value = "label " + rowCount;
       cell.appendChild(input);
     } else {
       let input = document.createElement("input");
+      input.addEventListener("input", generateChart);
       input.type = "number";
       input.min = "0";
       input.max = "100";
@@ -29,11 +31,13 @@ function addColumn() {
     let cell = table.rows[i].insertCell(-1);
     if (i === 0) {
       let input = document.createElement("input");
+      input.addEventListener("input", generateChart);
       input.type = "text";
       input.value = "Dataset " + (table.rows[0].cells.length - 1);
       cell.appendChild(input);
     } else {
       let input = document.createElement("input");
+      input.addEventListener("input", generateChart);
       input.type = "number";
       input.min = "0";
       input.max = "100";
@@ -74,7 +78,6 @@ function generateChart() {
   let fillvalue =
     document.getElementById("fill-selecter").value === "true" ? true : false;
   let chartType = document.getElementById("type-selecter").value;
-  console.log(chartType);
   // Extract marks data for each subject
   for (let j = 1; j < rows[0].cells.length; j++) {
     let dataset_names = rows[0].cells[j].querySelector("input").value;
@@ -90,6 +93,8 @@ function generateChart() {
       data: data,
       borderWidth: 1,
       fill: fillvalue,
+
+      borderWidth: 3,
       tension: 0.3,
     });
   }
@@ -123,8 +128,6 @@ function generateChart() {
     },
     plugins: [plugin],
   });
-
-  console.log("myChart", myChart);
 }
 
 // Download the Image
@@ -145,3 +148,11 @@ function downloadChart() {
 window.onload = function () {
   document.getElementById("generate-button").click();
 };
+
+// Add event listeners to initial input fields
+
+const inputFields = document.querySelectorAll("input");
+
+inputFields.forEach((inputField) => {
+  inputField.addEventListener("input", generateChart);
+});
